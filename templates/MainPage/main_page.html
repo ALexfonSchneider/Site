@@ -1,0 +1,28 @@
+{% extends 'MainPage/base.html' %}
+
+{% load main_page_tags %}
+
+
+{% block links %}
+    <link rel="stylesheet" href="/static/MainPage/css/mainpage_styles.css">
+{% endblock %}
+
+<ol>
+    <li><a href="/">Home</a></li>
+</ol>
+
+{% block main %}
+        <div class="NotesContainer">
+            {% render_notes %}
+        </div>
+        <form class="NoteCreateToolContainer" method="post" action="CreateNote">
+            {% csrf_token %}
+            <div class="NoteCreateToolContainer-TextareaContainer">
+                <textarea name="content">{{ formdata }}</textarea>
+                {{ error|safe }}
+            </div>
+            <div class="NoteCreateToolContainer-ButtonContainer">
+                <input type="submit" value="Create">
+            </div>
+        </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'MainPage/base.html' %}
+
+{% block links %}
+    <link rel="stylesheet" href="/static/WebExplorer/css/base.css">
+{% endblock %}
+
+{% block main %}
+    <ul>
+        {% for uri, element in lst %}
+            <li><a href="{{ uri }}">{{ element }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% for note in db %}
+<form class="NoteContainer" method="post" action="DeleteNote">
+    {% csrf_token %}
+        <div class="NotePaintedZone">
+            <div class="NoteContentContainer">
+                {{ note.content|safe }}
+            </div>
+        </div>
+        <div class="NoteButtonContainer">
+            <input name="id" value="{{ note.id }}" style="display: none">
+            <input type="submit" class="deletebutton" value="Delete Node">
+        </div>
+</form>
+{% endfor %}

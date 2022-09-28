@@ -1,0 +1,6 @@
+<div class="nav-container">
+    <h3>Apps:</h3>
+    {% for app in apps %}
+        <div class="nav-element"><a href="{{ app.url}}">{{ app.name }}</a></div>
+    {% endfor %}
+</div>
